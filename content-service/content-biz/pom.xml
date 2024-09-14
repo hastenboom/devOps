@@ -97,6 +97,13 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
+                <!-- 这里不需要指定版本，因为已经在父POM的<pluginManagement>中定义了 -->
+                <!-- 如果需要覆盖某些配置，可以在这里进行 -->
+                <executions>
+                    <!-- 这里可以省略，因为已经在父POM中定义了 -->
+                    <!-- 如果需要为子模块添加额外的执行阶段或目标，可以在这里添加 -->
+                </executions>
+                <!-- 如果需要覆盖父POM中的配置，可以在这里添加<configuration> -->
             </plugin>
         </plugins>
     </build>
