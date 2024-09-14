@@ -1,0 +1,6 @@
+db:
+  host: mysql01
+  port: 3306
+  database: hmall
+  username: root
+  password: 123456

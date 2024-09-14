@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: content-service
+  profiles:
+    active: dev
+
+  cloud:
+    nacos:
+      server-addr: ${nacos.server-addr}
+      config:
+        file-extension: yaml
+        shared-configs:
+          - data-id: shared-jdbc.yaml
+          - data-id: shared-log.yaml

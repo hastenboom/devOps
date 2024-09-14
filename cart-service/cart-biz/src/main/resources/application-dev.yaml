@@ -1,0 +1,6 @@
+db:
+  host: localhost
+  port: 33061
+  database: hmall
+  username: root
+  password: 123456
