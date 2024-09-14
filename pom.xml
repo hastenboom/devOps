@@ -146,13 +146,9 @@
                         </execution>
                     </executions>
 
-
                     <!--生成时所产出的内容是什么-->
                     <configuration>
                         <imageName>dev-ops/${project.artifactId}:${project.version}</imageName>
-                        <!--镜像名，最好加上一些标识，方便CICD中的删除-->
-                        <!--                        <repository>${project.artifactId}</repository> &lt;!&ndash; 设置Docker镜像的仓库名和镜像名 &ndash;&gt;-->
-                        <!--                        <tag>${project.version}</tag> &lt;!&ndash; 使用Maven项目的版本号作为Docker镜像的标签 &ndash;&gt;-->
                         <buildArgs> <!-- 定义传递给Dockerfile的构建参数 -->
                             <!-- JAR文件的路径，作为构建参数传递给Dockerfile -->
                             <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
