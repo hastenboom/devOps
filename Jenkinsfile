@@ -9,9 +9,9 @@ pipeline {
         stage('build') {
             steps {
                 // 执行当前目录下的clean.sh脚本
-                sh './clean.sh'
+                sh 'sudo ./clean.sh'
                 // 执行当前目录下的build.sh脚本
-                sh './build.sh'
+                sh 'sudo ./build.sh'
             }
         }
     }
