@@ -1,0 +1,33 @@
+# dev-ops/${project.artifactId}:${project.version}
+services:
+  cart-service:
+    image: dev-ops/cart-service:0.0.1-SNAPSHOT
+    container_name: dev-ops/cart-service
+    ports:
+      - "9081:9081"
+    networks:
+      - hm-net
+
+  content-service:
+    image: dev-ops/content-service:0.0.1-SNAPSHOT
+    container_name: dev-ops/content-service
+    ports:
+      - "9080:9080"
+    networks:
+      - hm-net
+
+  gateway-service:
+    image: dev-ops/gateway-service:0.0.1-SNAPSHOT
+    container_name: dev-ops/gateway-service
+    ports:
+      - "9083:9083"
+    networks:
+      - hm-net
+
+networks:
+  hm-net:
+    external: true
+
+
+
+
