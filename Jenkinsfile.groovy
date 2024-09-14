@@ -8,21 +8,8 @@ pipeline {
         }
         stage('clean') {
             steps {
-                /*   sh 'sudo docker container ls -a --format "{{.Names}}" | grep \'^dev-ops\' | xargs -I {} sudo docker -f rm {}'
-                  sh ' sudo docker image ls | grep \'^dev-ops\' | awk \'{print $3}\' | xargs -I {} sudo docker rmi -f {}' */
                 script {
-                    /*  echo "Listing all Docker containers..."
-                      sh "ls"
-                      sh 'sudo docker container ls -a --format "{{.Names}}"'
 
-                      echo "Removing dev-ops containers..."
-                      sh 'sudo docker container ls -a --format "{{.Names}}" | grep "^dev-ops$" | xargs -rI {} sudo docker rm -f {}'
-
-                      echo "Listing all Docker images..."
-                      sh 'sudo docker image ls'
-
-                      echo "Removing dev-ops images..."
-                      sh 'sudo docker image ls | grep "^dev-ops$" | awk "{print \$3}" | xargs -rI {} sudo docker rmi -f {}'*/
                     sh 'chmod +x clean.sh'
                     sh 'chmod +x build.sh'
                     // 执行当前目录下的clean.sh脚本
@@ -31,7 +18,6 @@ pipeline {
                     sh 'sudo ./build.sh'
                 }
             }
-
         }
         stage('build') {
             steps {
