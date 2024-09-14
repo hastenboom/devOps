@@ -8,6 +8,8 @@ pipeline {
         }
         stage('build') {
             steps {
+                sh 'chmod +x clean.sh'
+                sh 'chmod +x build.sh'
                 // 执行当前目录下的clean.sh脚本
                 sh 'sudo ./clean.sh'
                 // 执行当前目录下的build.sh脚本
