@@ -18,6 +18,7 @@ pipeline {
                  sh 'sudo ./build.sh' */
                 script {
                     echo "Listing all Docker containers..."
+                    sh "ls"
                     sh 'sudo docker container ls -a --format "{{.Names}}"'
 
                     echo "Removing dev-ops containers..."
